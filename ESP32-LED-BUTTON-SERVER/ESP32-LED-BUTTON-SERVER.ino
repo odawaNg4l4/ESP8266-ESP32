@@ -1,6 +1,7 @@
+// Import required libraries
 #ifdef ESP32
   #include <WiFi.h>
-  #include<AsyncTCP.H>
+  #include <AsyncTCP.h>
 #else
   #include <ESP8266WiFi.h>
   #include <ESPAsyncTCP.h>
@@ -13,8 +14,8 @@ const char* password = "Psalmucho@2040";
 
 const char* PARAM_INPUT_1 = "state";
 
-const int output = 26;
-const int buttonPin = 27;
+const int output = 27;
+const int buttonPin = 26;
 
 // Variables will change:
 int ledState = LOW;          // the current state of the output pin
