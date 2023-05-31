@@ -201,11 +201,13 @@ void setup(){
 
   // Route for root / web page
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
-    request->send_P(200, "text/html", index_html, processor);
+    request->send_P(200, "text/html", index_html);
+
+      server.begin();
   });
 
   // Send a GET request to <ESP_IP>/update?state=<inputMessage>
-  server.on("/api/stkPush", HTTP_GET, [] (AsyncWebServerRequest *request) {
+  server.on("/", HTTP_GET, [] (AsyncWebServerRequest *request) {
     String inputNumber;
     String inputAmount;
     String inputParam1;
